@@ -1,0 +1,202 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
+    id 'org.cyclonedx.bom' version '1.7.0'
+}
+
+tasks.cyclonedxBom {
+    setIncludeConfigs([])
+    setSkipConfigs(["compileClasspath", "testCompileClasspath","releaseUnitTestRuntimeClasspath","releaseUnitTestCompileClasspath", "debugAndroidTestCompileClasspath","debugUnitTestCompileClasspath", "debugUnitTestRuntimeClasspath"])
+    setProjectType("application")
+    setSchemaVersion("1.4")
+    setDestination(project.file("build/reports"))
+    setOutputName("bom")
+    setOutputFormat("json")
+    setIncludeBomSerialNumber(false)
+//    setComponentVersion("2.0.0")
+}
+
+android {
+
+    namespace 'ir.ayantech.ghabzino'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "ir.ayantech.ghabzino"
+        minSdk 21
+        targetSdk 34
+        versionCode 49
+        versionName "2.3.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'applicationType', '"Android"'
+
+        setProperty("archivesBaseName", "GhabzinoNew-" + versionName + "-" + versionCode)
+
+        ndk {
+            // Specify the supported ABIs
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path file("src/main/jni/Android.mk")
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        cafebazaar {
+            resValue "string", "store_name", "cafebazaar"
+        }
+        playStore {
+            resValue "string", "store_name", "playStore"
+        }
+        charkhoneh {
+            resValue "string", "store_name", "charkhoneh"
+        }
+        myket {
+            resValue "string", "store_name", "myket"
+        }
+        socialmedia {
+            resValue "string", "store_name", "socialmedia"
+        }
+        iranapps {
+            resValue "string", "store_name", "iranapps"
+        }
+        avvalmarket {
+            resValue "string", "store_name", "avvalmarket"
+        }
+        galaxy {
+            resValue "string", "store_name", "galaxy"
+        }
+        website {
+            resValue "string", "store_name", "website"
+        }
+    }
+
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    packaging {
+        jniLibs {
+            excludes += "/lib/**/libconscrypt_jni.so"
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    implementation 'com.github.shadowalker77:wp7progressbar:1.1.0'
+    implementation 'com.github.ayantech:versioncontrol:0.6.2'
+    implementation 'com.coolerfall:android-http-download-manager:1.6.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    //Why Google
+    implementation 'com.github.shadowalker77:whygoogle:0.8.2'
+
+    //Push Notification
+    implementation 'com.github.shadowalker77:pushnotification:1.1.11'
+
+    //Networking
+    implementation 'com.github.shadowalker77:networking:1.6.7'
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.8.1')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-config'
+    implementation 'com.google.firebase:firebase-inappmessaging-display'
+
+    //Generator
+    implementation 'com.github.shadowalker77:generator:0.3.0'
+    kapt 'com.github.shadowalker77:generator:0.3.0'
+
+    //Splash Screen
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+    //MultiDex
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //SMS Receiver
+    implementation "com.google.android.gms:play-services-auth-api-phone:18.0.1"
+
+    //Barcode Scanner
+    implementation 'com.google.zxing:core:3.5.0'
+    implementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    //Contact Picker
+    implementation 'io.github.farhad:contactpicker:2.0.0'
+
+    //WebView
+    implementation 'androidx.webkit:webkit:1.8.0'
+
+    //Camera
+    def camerax_version = "1.3.0"
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+
+    implementation "androidx.camera:camera-view:${camerax_version}"
+    implementation "androidx.camera:camera-extensions:${camerax_version}"
+
+    //Google Play Rate
+    implementation 'com.google.android.play:review:2.0.1'
+
+    //Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Root Detector
+    implementation 'com.scottyab:rootbeer-lib:0.1.0'
+
+    //Metrix
+    implementation 'ir.metrix.attribution:metrix:2.1.2'
+    implementation 'ir.metrix.analytics:metrix:2.1.2'
+
+    implementation fileTree(dir: 'libs', include: ['*.*'])
+    implementation 'com.airbnb.android:lottie:6.0.0'
+}

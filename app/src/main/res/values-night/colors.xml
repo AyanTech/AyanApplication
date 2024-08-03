@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="purple_200">#FFBB86FC</color>-->
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
+<!--    <color name="teal_200">#FF03DAC5</color>-->
+<!--    <color name="teal_700">#FF018786</color>-->
+    <color name="black">#0C0C0C</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="white1">#FFFFFF</color>
+    <color name="white2">#212121</color>
+    <color name="white3">#2E2E2E</color>
+    <color name="white4">#3A3A3A</color>
+
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="gray1">@color/white1</color>
+    <color name="gray2">@color/white1</color>
+    <color name="gray3">#FAFAFA</color>
+    <color name="gray4">@color/white</color>
+    <color name="gray4_1">@color/white</color>
+    <color name="gray4_2">#BDBDBD</color>
+    <color name="gray5">#D8D8D8</color>
+    <color name="gray6">#2E2E2E</color>
+    <color name="gray7">@color/white4</color>
+    <color name="gray8">#313131</color>
+    <color name="gray8_1">#313131</color>
+    <color name="gray8_2">@color/white4</color>
+    <color name="gray9">@color/white4</color>
+
+    <color name="color_primary">#339966</color>
+    <color name="color_primary_dark">@color/white1</color>
+    <color name="color_primary_light">#3DB679</color>
+    <color name="color_primary_alpha8">#2E2E2E</color>
+    <color name="color_primary_alpha20">#517458</color>
+    <color name="color_accent">#4CB050</color>
+    <color name="color_accent_dark">#439A46</color>
+    <color name="color_accent_light">#78C57B</color>
+    <color name="color_accent_second">#FFA800</color>
+    <color name="colorAccent">@color/color_primary</color>
+    <color name="colorPrimary">@color/color_primary</color>
+    <color name="colorPrimaryDark">@color/color_primary_dark</color>
+
+    <color name="status_bar_color">#308B5E</color>
+    <color name="navigation_bar_color">#424242</color>
+
+    <color name="text_black">@color/white1</color>
+    <color name="text_description">@color/gray4</color>
+    <color name="text_details">@color/color_primary</color>
+    <color name="text_key">@color/gray3</color>
+    <color name="text_value">@color/text_black</color>
+
+    <color name="default_background_color">@color/black</color>
+    <color name="row_key_value_background">@color/gray8</color>
+
+    <color name="state_error">#F06C87</color>
+    <color name="state_warning">#F3A712</color>
+    <color name="state_warning_1">#9C6A55</color>
+    <color name="state_warning_2">#FFAD8C</color>
+    <color name="state_success">#12C565</color>
+
+    <color name="service_irancell">#FFBE00</color>
+    <color name="service_hamrah_aval">#4FBDC3</color>
+    <color name="service_rightel">#9C0E74</color>
+    <color name="service_bills">#36A9E2</color>
+    <color name="service_car">#AB60DD</color>
+    <color name="service_charge">#1BC172</color>
+    <color name="service_financial">#FF8700</color>
+
+    <color name="button_filled_background_solid_enable">@color/color_primary</color>
+    <color name="button_filled_background_solid_disable">#545454</color>
+    <color name="button_textColor_enable">@color/white</color>
+    <color name="button_textColor_disable">#757575</color>
+
+    <color name="button_outlined_background_solid">@color/transparent</color>
+    <color name="button_outlined_background_stroke_enable">@color/state_error</color>
+    <color name="button_outlined_background_stroke_disable">@color/gray7</color>
+
+    <color name="edittext_background_solid_enable">@color/gray8</color>
+    <color name="edittext_background_solid_disable">@color/gray9</color>
+    <color name="edittext_background_stroke_enable">@color/white4</color>
+    <color name="edittext_background_stroke_disable">@color/gray7</color>
+    <color name="edittext_textColor_enable">@color/gray4</color>
+    <color name="edittext_textColor_disable">@color/gray6</color>
+
+    <color name="bottom_menu_item_background">@color/color_primary_alpha8</color>
+    <color name="bottom_menu_item_foreground">@color/color_primary</color>
+    <color name="bottom_menu_item_selected">@color/color_primary</color>
+    <color name="bottom_menu_item_unselected">@color/gray4</color>
+
+    <color name="home_divider">@color/gray8_2</color>
+
+    <color name="colorStamp">#128C7E</color>
+
+    <color name="history_item_label_payment_receipt">#2EC4B6</color>
+    <color name="history_item_label_inquiry_result">#004FAC</color>
+
+    <color name="background_gradient_start_color">@color/white2</color>
+    <color name="background_gradient_end_color">#252525</color>
+
+    <color name="service_icon_background_tint">#F3F3F3</color>
+
+    <color name="icon_tint">@color/gray5</color>
+    <color name="iv_close_tint">@color/white</color>
+    <color name="iv_forward_tint">@color/icon_tint</color>
+    <color name="ic_pin_tint">#757575</color>
+    <color name="ic_label_tint">@color/color_primary</color>
+
+    <color name="collapse_indicator_color">@color/gray7</color>
+
+    <color name="f_history_trust_to_ghabzino_tv">#F3F3F3</color>
+    <color name="f_history_search_component_back">@color/transparent</color>
+
+    <color name="checkpoint_color">#3E3E3E</color>
+
+    <color name="f_menu_profile_iv">#D8D8D8</color>
+    <color name="f_menu_row_iv_back">@color/gray9</color>
+    <color name="f_menu_row_iv">@color/gray1</color>
+
+    <color name="f_base_result_back_drawable_root">@color/gray8_2</color>
+    <color name="f_base_result_back_drawable_squares">@color/gray6</color>
+    <color name="f_base_result_back_drawable_squares_primary">#4CB050</color>
+    <color name="f_base_result_back_drawable_squares2">@color/gray7</color>
+    <color name="f_base_result_bill_card_back">@color/white2</color>
+    <color name="f_base_result_bill_card_stroke">@color/white2</color>
+    <color name="f_base_result_back_payment_section">@color/white1</color>
+
+    <color name="row_key_value_back_even_position">@color/gray7</color>
+    <color name="row_key_value_back_odd_position">@color/white3</color>
+
+    <color name="com_plate_number_back_tint">@color/gray4_2</color>
+
+    <color name="f_history_details_messages_rv_back">#517458</color>
+
+    <color name="row_history_details_message_drawable_tint">@color/white1</color>
+
+    <color name="bottom_navigation_fill_color_disabled">@color/gray4_2</color>
+    <color name="bottom_navigation_fill_color_enabled">@color/color_primary</color>
+
+    <color name="row_simple_data_back_tint">@color/white4</color>
+
+    <color name="row_products_item_back_tint_default">@color/gray8</color>
+
+    <color name="bs_add_new_bill_to_cart_item_back_tint">#424242</color>
+
+    <color name="radio_button_unchecked_stroke_color">@color/white1</color>
+    <color name="radio_button_unchecked_fill_color">@color/white2</color>
+    <color name="radio_button_checked_stroke_color">@color/color_primary</color>
+    <color name="radio_button_checked_fill_color">@color/white2</color>
+
+    <color name="drawable_dash_color">@color/gray9</color>
+    <color name="drawable_solid_color">@color/transparent</color>
+
+    <color name="scrollbar_track_color">@color/white4</color>
+    <color name="scrollbar_thumb_color">@color/color_primary</color>
+
+    <color name="bs_general_terms_back">@color/gray7</color>
+
+    <color name="row_vehicle_authenticity_message_icon_tint_success">@color/white1</color>
+    <color name="row_vehicle_authenticity_message_icon_tint_fail">@color/state_warning_2</color>
+
+    <color name="com_receipt_result_ghabzino_text">@color/white1</color>
+
+    <color name="drawable_line_dotted_color">@color/gray8_2</color>
+
+    <color name="row_shaparak_card_item_back_color">@color/gray7</color>
+
+    <color name="ic_freeway_tint">#339966</color>
+
+    <color name="bs_post_tracking_receipt_component_back_color">@color/gray9</color>
+
+    <color name="drawable_top_stroke_color">#2E2E2E</color>
+
+    <color name="ocr_fragment_background">@color/gray8_2</color>
+</resources>
