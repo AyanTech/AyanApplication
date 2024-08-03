@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.preemptive.dasho.android'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.firebase.crashlytics'
     id 'com.google.gms.google-services'
@@ -52,31 +53,10 @@ android {
     flavorDimensions "default"
     productFlavors {
         cafebazaar {
-            resValue "string", "store_name", "cafebazaar"
+            manifestPlaceholders = [store_name: "cafebazaar"]
         }
         playStore {
-            resValue "string", "store_name", "playStore"
-        }
-        charkhoneh {
-            resValue "string", "store_name", "charkhoneh"
-        }
-        myket {
-            resValue "string", "store_name", "myket"
-        }
-        socialmedia {
-            resValue "string", "store_name", "socialmedia"
-        }
-        iranapps {
-            resValue "string", "store_name", "iranapps"
-        }
-        avvalmarket {
-            resValue "string", "store_name", "avvalmarket"
-        }
-        galaxy {
-            resValue "string", "store_name", "galaxy"
-        }
-        website {
-            resValue "string", "store_name", "website"
+            manifestPlaceholders = [store_name: "playStore"]
         }
     }
 
@@ -87,8 +67,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            shrinkResources true
-            minifyEnabled true
+            shrinkResources false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -103,6 +83,8 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
+        aidl = true
     }
     packaging {
         jniLibs {
@@ -115,8 +97,15 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.12.0'
+//    implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+// MAP
+//    implementation files('C:/Users/Ayan/Downloads/mobile-sdk-0.9.9.aar')
+//    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+//    implementation 'com.google.android.gms:play-services-location:21.0.1'
+//    implementation(name: "mobile-sdk-0.9.9", ext: "aar")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -158,6 +147,9 @@ dependencies {
     //Splash Screen
     implementation 'androidx.core:core-splashscreen:1.0.1'
 
+    //Bottom Menu
+//    implementation 'io.ak1:bubbletabbar:1.0.8'
+
     //MultiDex
     implementation 'com.android.support:multidex:1.0.3'
 
@@ -171,6 +163,9 @@ dependencies {
 
     //Contact Picker
     implementation 'io.github.farhad:contactpicker:2.0.0'
+
+    //Scroll Gallery View
+//    implementation 'com.veinhorn.scrollgalleryview:library:1.2.7'
 
     //WebView
     implementation 'androidx.webkit:webkit:1.8.0'
@@ -187,16 +182,36 @@ dependencies {
     //Google Play Rate
     implementation 'com.google.android.play:review:2.0.1'
 
+    //Convert Amount To Persian Text
+//    implementation 'com.github.yamin8000:PrettyPersianNumbers:2.0.1'
+
     //Shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //OCR
+//    implementation 'com.github.AyanTech:OCR-SDK:1.1.0'
 
     //Root Detector
     implementation 'com.scottyab:rootbeer-lib:0.1.0'
 
     //Metrix
+//    implementation 'ir.metrix:metrix:1.6.0'
     implementation 'ir.metrix.attribution:metrix:2.1.2'
     implementation 'ir.metrix.analytics:metrix:2.1.2'
 
     implementation fileTree(dir: 'libs', include: ['*.*'])
     implementation 'com.airbnb.android:lottie:6.0.0'
+}
+
+dasho {
+    debug false
+    doxFilename "project.dox"
+    enabledBuildVariants "release"
+    excludeFromProtection null //See docs for details
+    home '/Applications/PreEmptive Protection DashO 12.3.app/Contents/Java' // for more information about DashO Home see the User Guide
+    javaOptions "-Xmx1024M", "-Xms512M" //Normally has no default values
+//     libraryAssetDirs //See docs for details
+//     libraryResourceDirs //See docs for details
+//     searchVersion "12"
+    verbose false
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dasho mode="android" version="11.3.0">
+    <controlflow option="on"/>
+    <stringencrypt option="on"/>
+    <injection/>
+</dasho>
